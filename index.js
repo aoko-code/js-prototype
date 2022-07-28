@@ -24,8 +24,14 @@ bankAccount.prototype.withdraw = function (wAmount) {
 bankAccount.prototype.getBalance = function () {
     return console.log(`your balance is ${this.balance}`)
 }
+bankAccount.prototype.generateIBAN = function() {
+    const IBAN =  Math.random().toString(36).substring(3, 8).toUpperCase()
+    
+    return console.log(` your IBAN number is ${IBAN + this.accNo}`)
+}
 
 user1 = new bankAccount(001, 'jane', 10000)
 console.log(user1.deposit(5000))
 console.log(user1.withdraw(20000))
 console.log(user1.getBalance())
+console.log(user1.generateIBAN())
